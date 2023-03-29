@@ -1,0 +1,59 @@
+form.signin {
+    @include flex-dfja(flex, column, center, center);
+}
+
+form.signup {
+    @include flex-dfja(flex, column, center, center);
+}
+
+// form.list-filter {
+// background-color: green;
+// }
+
+form.item-create,
+form.item-update,
+form.item-delete,
+form.item-show {
+    // background-color: yellow;
+    @include flex-dfja(flex, column, flex-start, center);
+}
+
+.form-row-one-item-start {
+    margin-top: 1rem;
+    @include flex-dfja(flex, row, flex-start, baseline);
+    width: $form-details-width;
+}
+
+.form-row-more-items-start {
+    // background-color: yellow;
+    margin-top: 1rem;
+    @include flex-dfja(flex, row, space-evenly, baseline);
+    width: $form-details-width;
+}
+
+.form-row-one-item-center {
+    @include flex-dfja(flex, row, flex-start, baseline);
+    width: $form-details-width;
+}
+
+.form-row-more-items-center {
+    // background-color: yellowgreen;
+    margin-top: 1rem;
+    @include flex-dfja(flex, row, space-evenly, baseline);
+    width: $form-details-width;
+}
+
+.form-row-button {
+    margin-top: 1.25rem;
+    @include flex-dfja(flex, row, center, baseline);
+    width: $form-details-width;
+}
+
+div.username,
+div.password,
+div.taskTitle {
+    margin-bottom: 1.2rem;
+    // font-size: smaller;
+    font-style: italic;
+    color: red($color: #000000)
+}

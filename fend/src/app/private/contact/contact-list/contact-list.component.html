@@ -1,0 +1,97 @@
+<div class="private-list-wrapper"> 
+    <h2 class="list-form-title">Contact List</h2>
+
+    <!-- form filter -->
+    <form class="list-filter">
+        <div class="filter">
+            <input class="filter" type="text" placeholder="filter..." (keyup)="applyFilter($event)" #input>
+            <button class="route-to-insert" [routerLink]="'/prv/cnt/ins'">Insert a new contact</button>
+        </div>
+    </form>
+    <!--  -->
+
+    <!-- table definition -->
+    <table cdk-table [dataSource]="dataSource" matSort>
+
+        <!-- Title Column; Footer definition -->
+        <ng-container cdkColumnDef="title">
+            <th width="7%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Title </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.title}} </td>
+            <th cdk-footer-cell *cdkFooterCellDef></th>
+        </ng-container>
+
+
+        <!-- First Name Column -->
+        <ng-container cdkColumnDef="firstname">
+            <th width="10%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> First Name </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.firstname}} </td>
+        </ng-container>
+
+        <!-- Last Name Column -->
+        <ng-container cdkColumnDef="lastname">
+            <th cdk-header-cell *cdkHeaderCellDef mat-sort-header> Last Name </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.lastname}} </td>
+        </ng-container>
+
+        <!-- Status Column -->
+        <ng-container cdkColumnDef="status">
+            <th width="12%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Status </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <!-- Category Column -->
+        <ng-container cdkColumnDef="category">
+            <th width="12%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Category </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.category}} </td>
+        </ng-container>
+
+
+        <!-- Email Column -->
+        <ng-container cdkColumnDef="email">
+            <th width="12%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Email </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+
+        <!-- Phone Column -->
+        <ng-container cdkColumnDef="phone">
+            <th width="12%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Phone </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.phone}} </td>
+        </ng-container>
+
+
+        <!-- Operations Column -->
+        <ng-container cdkColumnDef="operations">
+            <th width="7%" cdk-header-cell *cdkHeaderCellDef> operations </th>
+            <td cdk-cell *cdkCellDef="let element">
+                <a [routerLink]="['/prv/cnt/shw/', element.id]"><i class="material-icons" style="color: green;">list</i></a>
+                <a [routerLink]="['/prv/cnt/upd/', element.id]"><i class="material-icons" style="color: blue;">edit</i></a>
+                <a [routerLink]="['/prv/cnt/del/', element.id]"><i class="material-icons" style="color: red;">delete</i></a>
+            </td>
+        </ng-container>
+
+        <!-- footer content -->
+        <ng-container cdkColumnDef="disclaimer">
+            <td cdk-footer-cell *cdkFooterCellDef colspan="8">Total count of rows in this table: {{this.contactsCount}}</td>
+        </ng-container>
+
+        <!-- header, data, fotter templates -->
+        <tr cdk-header-row *cdkHeaderRowDef="columnList"></tr>
+        <tr cdk-row *cdkRowDef="let row; columns: columnList;"></tr>
+        <tr cdk-footer-row *cdkFooterRowDef="['disclaimer']"></tr>
+    </table>
+
+    <!-- paginator -->
+    <div class="paginator">
+        <select>
+            <option value="5">05 rows per page</option>
+            <option value="15">15 rows per page</option>
+            <option value="25">25 rows per page</option>
+            <option value="all">No paging</option>
+        </select>
+        <a href=""><span class="material-symbols-outlined">first_page</span></a>
+        <a href=""><span class="material-symbols-outlined">chevron_left</span></a>
+        <a href=""><span class="material-symbols-outlined">chevron_right</span></a>
+        <a href=""><span class="material-symbols-outlined">last_page</span></a>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.public-dashboard-wrapper, .private-dashboard-wrapper {
+    background-color: yellow;
+    @include flex-dfja(flex, column, flex-start, stretch);
+    min-height: 100vh;
+}
+
+
+article.public {
+    background-color: whitesmoke;
+    flex: 1;
+    @include flex-dfja(flex, column, center, center);
+}
+
+article.private {
+    background-color: whitesmoke;
+    flex: 1;
+    @include flex-dfja(flex, column, flex-start, center);
+}

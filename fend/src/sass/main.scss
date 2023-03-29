@@ -1,0 +1,30 @@
+@import '@angular/cdk/a11y-prebuilt.css';
+
+@import "../sass/abstracts/variables";
+@import "../sass/abstracts/functions";
+@import "../sass/abstracts/mixins";
+@import "../sass/abstracts/placehoders";
+
+@import "../sass/base/reset";
+@import "../sass/base/typography";
+
+@import "../sass/components/buttons";
+@import "../sass/components/inputs";
+@import "../sass/components/tables";
+@import "../sass/components/titles";
+
+@import "../sass/layouts/headers";
+@import "../sass/layouts/footers";
+@import "../sass/layouts/forms";
+
+@import "../sass/pages/dashboards";
+@import "../sass/pages/signin";
+@import "../sass/pages/signup";
+@import "../sass/pages/card-list";
+@import "../sass/pages/task-create";
+@import "../sass/pages/task-list";
+@import "../sass/pages/task-delete";
+@import "../sass/pages/task-update";
+
+// @import "../sass/themes/";
+// @import "../sass/vendors/";

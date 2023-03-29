@@ -1,0 +1,7 @@
+.sign-card {
+    width: 20rem;
+    padding: 1.2rem;
+    box-shadow: 0 0 2rem 1rem rgba(black, 0.12);
+    @include flex-dfja(flex, column, flex-start, center);
+    font-family: $font-family-public;
+}

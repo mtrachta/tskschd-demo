@@ -1,0 +1,25 @@
+<div class="sign-card signin-card">
+    <h2 class="public-title">Login</h2>
+    <form class="signin" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="username">
+            <label for="username">Email:</label>
+            <input mat-input class="public-input" type="email" placeholder="abc@abcde.ab" id="username" formControlName="username" required>
+            <div *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)" class="signin-input-error">
+                username error
+            </div>
+        </div>
+        <div class="password">
+            <label for="password">Password:</label>            
+            <input class="public-input"type="password" placeholder="min. 6 characters" id="password" formControlName="password" required>
+            <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="signin-input-error">
+                password error
+            </div>
+        </div>
+        <div>
+            <button class="public-ok signin-ok" [disabled]="!form.valid">Login</button>
+        </div>
+    </form>
+</div>
+<!-- <p>Form valid: {{form.valid}}</p> -->
+<!-- <p>Username valid: {{f.username.valid}}</p> -->
+<!-- <p>Password valid: {{f.password.valid}}</p> -->

@@ -1,0 +1,19 @@
+public-footer, private-footer {
+    background-color: $color-public-footer-background;
+    height: $height-public-footer;
+
+    font-family: $font-family-public;
+
+    @include flex-dfja(flex, row, space-between, center);
+
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    div {
+        color: lightblue;
+    }
+
+}
+
+private-footer {
+    background-color: $color-public-footer-background;
+}

@@ -1,0 +1,49 @@
+<div class="private-list-wrapper">
+    <h2 class="list-form-title">Task List</h2>
+    <form class="list-filter">
+        <div class="filter">
+            <!-- <label for="taskFilter">Filter:</label> -->
+            <input class="filter" type="text" placeholder="filter..." (keyup)="applyFilter($event)" #input>
+            <button class="route-to-insert" [routerLink]="'/prv/tsk/ins'">Insert a new task</button>
+        </div>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let clm of columns" [style]=clm[1] [colSpan]=clm[2]>
+                    <button class="sort" type="button">{{clm[0]}}</button>
+                </th>
+            </tr>
+        </thead>
+        <tr *ngFor="let row of tasks">
+            <td class="left">{{row.title}}</td>
+            <td class="center">{{row.status}}</td>
+            <td class="center">{{row.priority}}</td>
+            <td class="center">{{row.category}}</td>
+            <td class="center">{{row.start | date: 'dd.MM.YYYY'}}</td>
+            <td class="center">{{row.finish | date: 'dd.MM.YYYY'}}</td>
+            <td class="center">
+                <a [routerLink]="['/prv/tsk/shw/', row.id]"><i class="material-icons" style="color: green;">list</i></a>
+            </td>
+            <td class="center">
+                <a [routerLink]="['/prv/tsk/upd/', row.id]"><i class="material-icons" style="color: blue;">edit</i></a>
+            </td>
+            <td class="center">
+                <a [routerLink]="['/prv/tsk/del/', row.id]"><i class="material-icons" style="color: red;">delete</i></a>
+            </td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td class="left" colspan="9">
+                    the count of rows in table: {{tasksCount}}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="paginator">
+        <a href=""><i class="material-icons" style="color: green;">first_page</i></a>
+        <a href=""><i class="material-icons" style="color: green;">chevron_left</i></a>
+        <a href=""><i class="material-icons" style="color: green;">chevron_right</i></a>
+        <a href=""><i class="material-icons" style="color: green;">last_page</i></a>
+    </div>
+</div>

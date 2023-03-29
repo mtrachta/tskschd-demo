@@ -1,0 +1,13 @@
+.private-list-wrapper {
+    width: $table-with;
+    // background-color: red;
+    @include flex-dfja(flex, column, flex-start, center);
+    // flex: 1;
+    font-family: $font-family-public;
+}
+
+div.filter {
+    width: $table-with * 0.88;
+    // background-color: orange;
+    @include flex-dfja(flex, row, space-between, center);
+}

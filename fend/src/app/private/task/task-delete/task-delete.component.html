@@ -1,0 +1,71 @@
+<div class="private-form-wrapper">
+    <!-- <div class="sign-card"> -->
+    <h2 class="detail-form-title">Task Delete Form</h2>
+    <form class="item-delete" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="taskTitle">Task title:</label>
+                <input class="task-delete" type="text" placeholder="task title" id="taskTitle"
+                    formControlName="taskTitle" required readonly>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="taskDescription">Task description:</label>
+                <textarea placeholder="task description" id="taskDescription" formControlName="taskDescription"
+                    readonly></textarea>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="taskStatus">Status:</label>
+                <input class="taskStatus" type="text" placeholder="task status" id="taskStatus"
+                    formControlName="taskStatus" required readonly>
+            </div>
+            <div>
+                <label for="taskPriority">Priority:</label>
+                <input class="taskPriority" type="text" placeholder="task priority" id="taskPriority"
+                    formControlName="taskPriority" required readonly>
+            </div>
+            <div>
+                <label for="taskCategory">Category:</label>
+                <input class="taskCategory" type="text" placeholder="task category" id="taskCategory"
+                    formControlName="taskCategory" readonly>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="taskStart">Task start:</label>
+                <input type="text" placeholder="task start" id="taskStart" formControlName="taskStart" required
+                    readonly>
+            </div>
+            <div>
+                <label for="taskFinish">Task finish:</label>
+                <input type="text" placeholder="task finish" id="taskFinish" formControlName="taskFinish" required
+                    readonly>
+            </div>
+            <div>
+                <label for="taskCreated">Item created:</label>
+                <input class="created" type="text" placeholder="created" id="taskCreated" formControlName="taskCreated"
+                    readonly>
+            </div>
+            <div>
+                <label for="taskUpdated">Item updated:</label>
+                <input class="updated" type="text" placeholder="updated" id="taskUpdated" formControlName="taskUpdated"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="taskNote">Note:</label>
+                <textarea placeholder="task note" id="taskNote" formControlName="taskNote" readonly></textarea>
+            </div>
+        </div>
+
+        <div class="form-row-button">
+            <button class="back-to-list" type="button" (click)="backToList()">Back to list</button>
+            <button class="route-to-update" type="button" (click)="backToUpdateTask()">Update</button>
+            <button class="delete-ok" type="submit" [disabled]="!form.valid">Delete</button>
+        </div>
+    </form>
+</div>

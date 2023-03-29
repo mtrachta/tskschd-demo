@@ -1,0 +1,75 @@
+<div class="private-form-wrapper">
+    <!-- <div class="sign-card"> -->
+    <h2 class="detail-form-title">Contact Insert Form</h2>
+    <form class="item-create" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row-more-items-start">
+            <div>
+                <label for="contactTitle">Contact title: *</label>
+                <select id="contactTitle" formControlName="contactTitle">
+                    <option *ngFor="let item of ContactTitleEnum" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="contactFirstName">First name:</label>
+                <input type="text" placeholder="first name" id="contactFirstName" formControlName="contactFirstName">
+            </div>
+            <div class="contactLastName">
+                <label for="contactLastName">Last name: *</label>
+                <input type="text" placeholder="last name" id="contactLastName" formControlName="contactLastName"
+                    required>
+                <div *ngIf="f.contactLastName.invalid && (f.contactLastName.dirty || f.contactLastName.touched)" class="contact-input-error">
+                    contact last name cannot be empty
+                </div>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="contactStatus">Status: *</label>
+                <select id="contactStatus" formControlName="contactStatus">
+                    <option *ngFor="let item of ContactStatusEnum" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="contactCategory">Category:</label>
+                <input type="text" placeholder="contact category" id="contactCategory"
+                    formControlName="contactCategory">
+            </div>
+
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="contactEmail">Email:</label>
+                <input type="email" placeholder="email" id="contactEmail" formControlName="contactEmail">
+            </div>
+            <div>
+                <label for="contactPhone">Phone:</label>
+                <input type="text" placeholder="phone" id="contactPhone" formControlName="contactPhone">
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="contactPosition">Position:</label>
+                <input type="text" placeholder="position" id="contactPosition" formControlName="contactPosition">
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="contactOrganisation">Organisation:</label>
+                <input type="text" placeholder="organisation" id="contactOrganisation"
+                    formControlName="contactOrganisation">
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="contactNote">Note:</label>
+                <textarea placeholder="contact note" id="contactNote" formControlName="contactNote"></textarea>
+            </div>
+        </div>
+
+        <div class="form-row-button">
+            <button class="private-ok insert-ok" type="submit" [disabled]="!form.valid">Insert this new contact</button>
+            <button class="private-cancel" type="button" (click)="backToList()">Cancel</button>
+        </div>
+    </form>
+    <!-- <p>Form valid: {{form.valid}}</p> -->
+</div>

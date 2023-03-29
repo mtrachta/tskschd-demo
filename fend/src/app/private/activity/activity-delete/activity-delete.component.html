@@ -1,0 +1,102 @@
+<div class="private-form-wrapper">
+    <!-- <div class="sign-card"> -->
+    <h2 class="detail-form-title">Activity Delete Form</h2>
+    <form class="item-create" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="activityTitle">Activity title:</label>
+                <input class="activity-create" type="text" placeholder="activity title" id="activityTitle"
+                    formControlName="activityTitle" required readonly>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="activityDescription">Activity description:</label>
+                <textarea placeholder="activity description" id="activityDescription"
+                    formControlName="activityDescription" readonly></textarea>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="activityStatus">Status:</label>
+                <input class="activity-create" type="text" placeholder="activity status" id="activityStatus"
+                    formControlName="activityStatus" required readonly>
+            </div>
+            <div>
+                <label for="activityPriority">Priority:</label>
+                <input class="activity-create" type="text" placeholder="activity priority" id="activityPriority"
+                    formControlName="activityPriority" required readonly>
+            </div>
+            <div>
+                <label for="activityCategory">Category:</label>
+                <input type="text" placeholder="activity category" id="activityCategory"
+                    formControlName="activityCategory" readonly>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="activityStartDate">Start date:</label>
+                <input type="date" placeholder="start date" id="activityStartDate" formControlName="activityStartDate"
+                    required readonly>
+            </div>
+            <div>
+                <label for="activityStartTime">Start time:</label>
+                <input type="time" placeholder="start time" id="activityStartTime" formControlName="activityStartTime"
+                    readonly>
+            </div>
+            <div>
+                <label for="activityLengthTotal">Length total [hh:min]:</label>
+                <input type="time" placeholder="length total" id="activityLengthTotal"
+                    formControlName="activityLengthTotal" readonly>
+            </div>
+            <div>
+                <label for="activityLengthAction">Length action [hh:min]:</label>
+                <input type="time" placeholder="length action" id="activityLengthAction"
+                    formControlName="activityLengthAction" readonly>
+            </div>
+            <div>
+                <label for="activityAveragePace">Average pace [min:ss]:</label>
+                <input type="time" placeholder="[min:sec]" id="activityAveragePace"
+                    formControlName="activityAveragePace" readonly>
+                <!-- : -->
+                <!-- <input type="number" placeholder="[sec]" id="activityAveragePaceSec" min="0" max="59" formControlName="activityAveragePaceSec"> -->
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="activityPlace">Place:</label>
+                <input type="text" placeholder="place" id="activityPlace" formControlName="activityPlace" readonly>
+            </div>
+            <div>
+                <label for="activityShoes">Shoes:</label>
+                <input type="text" placeholder="shoes" id="activityShoes" formControlName="activityShoes" readonly>
+            </div>
+            <div>
+                <label for="activitySources">Sources:</label>
+                <input type="text" placeholder="sources" id="activitySources" formControlName="activitySources"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="activityNote">Note:</label>
+                <textarea placeholder="activity note" id="activityNote" formControlName="activityNote"></textarea>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="activityCreated">Item created:</label>
+                <input class="created"  type="text" placeholder="created" id="activityCreated" formControlName="activityCreated" readonly>
+            </div>
+            <div>
+                <label for="activityUpdated">Item updated:</label>
+                <input class="updated" type="text" placeholder="updated" id="activityUpdated" formControlName="activityUpdated" readonly>
+            </div>
+        </div>
+        <div class="form-row-button">
+            <button class="back-to-list" type="button" (click)="backToList()">Back to list</button>
+            <button class="route-to-update" type="button" (click)="backToUpdateActivity()">Update</button>
+            <button class="delete-ok" type="submit" [disabled]="!form.valid">Delete</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<div class="sign-card signup-card">
+    <h2 class="public-title">Register</h2>
+    <form class="signup" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="username">
+            <label for="username">Email:</label>
+            <input mat-input class="public-input" type="email" placeholder="abc@abcde.ab" id="username" formControlName="username" required>
+            <div *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)" class="signin-input-error">
+                username error
+            </div>
+        </div>
+        <div class="password">
+            <label for="password">Password:</label>            
+            <input class="public-input"type="password" placeholder="min. 6 characters" id="password" formControlName="password" required>
+            <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="signin-input-error">
+                password error
+            </div>
+        </div>
+        <div>
+            <label for="firstname">First name:</label>
+            <input class="public-input" type="text" placeholder="1 - 32 characters" id="firstname" formControlName="firstname" required>
+        </div>
+        <div>
+            <label for="lastname">Last name:</label>            
+            <input class="public-input" type="text" placeholder="1 - 32 characters" id="lastname" formControlName="lastname" required>
+        </div>
+        <div>
+            <button class="public-ok signin-ok" [disabled]="!form.valid">Register</button>
+        </div>
+    </form>
+</div>

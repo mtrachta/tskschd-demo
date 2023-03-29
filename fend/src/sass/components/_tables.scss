@@ -1,0 +1,73 @@
+table {
+    margin-top: 3vh;
+    // background-color: green;
+    width: 100%;
+    border: 1px solid darkblue;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: lightskyblue;;
+}
+tfoot {
+    height: 2rem;
+    color: white;
+    background-color: royalblue;
+
+    th, td {
+        font-style: italic;
+        font-size: smaller;
+        font-weight: 400;
+    }
+}
+
+// tr {
+    // vertical-align: middle;
+// }
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+  }
+
+th {
+    border-bottom: 1px solid blue;
+    // border-collapse: collapse;
+    padding: 1vh;
+    color: blue;
+}
+
+td {
+    vertical-align: middle;
+    font-size: smaller;
+    font-weight: 330;
+    padding-left: 1vh;
+    // height: 3vh;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    border-collapse: collapse;
+}
+
+td.center {
+    text-align: center;
+}
+
+td.left {
+    padding-left: 0.5vh;
+    text-align: left;
+}
+
+div.paginator {
+    padding: 1.5vh;
+    width: $table-with;
+    // background-color: brown;
+    @include flex-dfja(flex, row, flex-end, center);
+
+    select {
+        background-color: inherit;
+        margin-right: 1rem;
+    }
+
+    a {
+        // margin-left: 1vh;
+        margin-right: 1rem;
+    }
+}

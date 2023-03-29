@@ -1,0 +1,113 @@
+button {
+    border: 1px solid rgba($color: grey, $alpha: 0.5);
+    border-radius: 5px;
+    margin: 0.75rem;
+    padding: 0.5rem;
+    height: 2.5rem;
+}
+
+button:hover {
+    box-shadow: 0.5em 0.5em 1em rgba(black, .2);
+}
+
+button.public-ok {
+    font-size: large;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+    background-color: blue;
+    width: 13rem;
+    height: 3rem;
+}
+
+button.public-ok:disabled,
+button.private-ok:disabled {
+    background-color: lightgray;
+    box-shadow: none;
+    color: black;
+    &:hover {
+        background-color: lightgray;
+        box-shadow: none;
+        color: black;    
+    }
+}
+
+button.private-ok,
+button.insert-ok {
+    color: darkblue;
+    width: 12rem;
+    background-color: rgba($color: blue, $alpha: 0.05);
+    &:hover {
+        color: white;
+        background-color: rgba($color: blue, $alpha: 1);
+    }
+}
+
+button.delete-ok {
+    color: darkred;
+    width: 12rem;
+    background-color: rgba($color: red, $alpha: 0.05);
+    &:hover {
+        color: white;
+        background-color: rgba($color: red, $alpha: 1);
+    }
+}
+
+button.update-ok {
+    color: darkgreen;
+    width: 12rem;
+    background-color: rgba($color: green, $alpha: 0.05);
+    &:hover {
+        color: white;
+        background-color: rgba($color: green, $alpha: 1);
+    }
+}
+
+button.update-ok:disabled {
+    background-color: lightgray;
+    box-shadow: none;
+    color: black;
+    &:hover {
+        background-color: lightgray;
+        box-shadow: none;
+        color: black;    
+    }
+}
+
+button.back-to-list {
+    width: 10rem;
+    background-color: rgba($color: blue, $alpha: 0.15);
+}
+
+button.route-to-insert {
+    width: 10rem;
+    background-color: rgba($color: blue, $alpha: 0.15);
+}
+
+button.route-to-update {
+    width: 10rem;
+    background-color: rgba($color: green, $alpha: 0.15);
+}
+
+button.route-to-delete {
+    width: 10rem;
+    background-color: rgba($color: red, $alpha: 0.15);
+}
+
+button.private-cancel {
+    width: 6rem;
+    // height: 3rem;
+    background-color: rgba($color: lightgrey, $alpha: 0.05);
+    &:hover {
+        background-color: rgba($color: lightgrey, $alpha: 1);
+    }
+}
+
+button.sort {
+    width: 7rem;
+    margin: 0;
+    background-color: inherit;
+    &:hover {
+        background-color: rgba($color: lightblue, $alpha: 1);
+    }
+}

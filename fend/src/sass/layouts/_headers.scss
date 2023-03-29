@@ -1,0 +1,21 @@
+public-header, private-header {
+    background-color: $color-public-header-background;
+    height: $height-public-header;
+
+    font-family: $font-family-public;
+    font-weight: 200;
+    @include flex-dfja(flex, row, space-between, center);
+
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+
+    a {
+        color: white;
+        margin-left: 1rem;
+    }
+
+}
+
+private-header {
+    background-color: $color-public-header-background;
+}

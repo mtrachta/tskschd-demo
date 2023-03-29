@@ -1,0 +1,65 @@
+<div class="private-form-wrapper">
+    <!-- <div class="sign-card"> -->
+    <h2 class="detail-form-title">Task Update Form</h2>
+    <form class="item-update" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row-one-item-start">
+            <div class="taskTitle">
+                <label for="taskTitle">Task title: *</label>
+                <input class="task-create" type="text" placeholder="task title" id="taskTitle"
+                    formControlName="taskTitle" required>
+                <div *ngIf="f.taskTitle.invalid && (f.taskTitle.dirty || f.taskTitle.touched)" class="task-input-error">
+                    task title cannot be empty
+                </div>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="taskDescription">Task description:</label>
+                <textarea class="task-update" placeholder="task description" id="taskDescription"
+                    formControlName="taskDescription"></textarea>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="taskStatus">Status: *</label>
+                <select id="taskStatus" formControlName="taskStatus">
+                    <option *ngFor="let item of taskStatusEnum" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="taskPriority">Priority: *</label>
+                <select id="taskPriority" formControlName="taskPriority">
+                    <option *ngFor="let item of taskPriorityEnum" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="taskCategory">Category:</label>
+                <input type="text" placeholder="task category" id="taskCategory" formControlName="taskCategory">
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="taskStart">Task start: *</label>
+                <input type="date" placeholder="task start" id="taskStart"
+                    formControlName="taskStart" min="2022-03-01" max="2022-12-31" required>
+            </div>
+            <div>
+                <label for="taskFinish">Task finish: *</label>
+                <input type="date" placeholder="task finish" id="taskFinish"
+                    formControlName="taskFinish" min="2022-03-01" max="2022-12-31" required>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="taskNote">Note:</label>
+                <textarea placeholder="task note" id="taskNote"
+                    formControlName="taskNote"></textarea>
+            </div>
+        </div>
+
+        <div class="form-row-button">
+            <button class="update-ok" type="submit" [disabled]="!form.valid">Update</button>
+            <button class="private-cancel" type="button" (click)="backToList()">Cancel</button>
+        </div>
+    </form>
+</div>

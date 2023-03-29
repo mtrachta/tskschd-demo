@@ -1,0 +1,54 @@
+<div class="private-form-wrapper">
+    <!-- <div class="sign-card"> -->
+    <h2 class="detail-form-title">Note Details</h2>
+    <form class="item-show" [formGroup]="form">
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="noteTitle">Note title:</label>
+                <input class="note-delete" type="text" placeholder="note title" id="noteTitle"
+                    formControlName="noteTitle" required readonly>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="noteBody">Note body:</label>
+                <textarea placeholder="note body" id="noteBody" formControlName="noteBody"
+                    readonly></textarea>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="noteStatus">Status:</label>
+                <input class="noteStatus" type="text" placeholder="note status" id="noteStatus"
+                    formControlName="noteStatus" required readonly>
+            </div>
+            <div>
+                <label for="notePriority">Priority:</label>
+                <input class="notePriority" type="text" placeholder="note priority" id="notePriority"
+                    formControlName="notePriority" required readonly>
+            </div>
+            <div>
+                <label for="noteCategory">Category:</label>
+                <input class="noteCategory" type="text" placeholder="note category" id="noteCategory"
+                    formControlName="noteCategory" readonly>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="noteCreated">Item created:</label>
+                <input class="created" type="text" placeholder="created" id="noteCreated" formControlName="noteCreated"
+                    readonly>
+            </div>
+            <div>
+                <label for="noteUpdated">Item updated:</label>
+                <input class="updated" type="text" placeholder="updated" id="noteUpdated" formControlName="noteUpdated"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-row-button">
+            <button class="back-to-list" type="button" (click)="backToList()">Back to list</button>
+            <button class="route-to-update" type="button" (click)="backToUpdateNote()">Update</button>
+            <button class="route-to-delete" type="button" (click)="backToDeleteNote()">Delete</button>
+        </div>
+    </form>
+</div>

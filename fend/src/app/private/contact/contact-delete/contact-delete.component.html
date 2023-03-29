@@ -1,0 +1,79 @@
+<div class="private-form-wrapper">
+    <!-- <div class="sign-card"> -->
+    <h2 class="detail-form-title">Contact Delete Form</h2>
+    <form class="item-delete" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row-more-items-start">
+            <div class="div1">
+                <label for="contactTitle">Contact title:</label>
+                <input type="text" placeholder="title" id="contactTitle" formControlName="contactTitle" readonly>
+            </div>
+            <div class="div2">
+                <label for="contactFirstName">First name:</label>
+                <input type="text" placeholder="first name" id="contactFirstName" formControlName="contactFirstName"
+                    readonly>
+            </div>
+            <div class="div3">
+                <label for="contactLastName">Last name:</label>
+                <input type="text" placeholder="last name" id="contactLastName" formControlName="contactLastName"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="contactStatus">Status:</label>
+                <input type="text" placeholder="status" id="contactStatus" formControlName="contactStatus" readonly>
+            </div>
+            <div>
+                <label for="contactCategory">Category:</label>
+                <input type="text" placeholder="contact category" id="contactCategory" formControlName="contactCategory"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="contactEmail">Email:</label>
+                <input type="email" placeholder="email" id="contactEmail" formControlName="contactEmail" readonly>
+            </div>
+            <div>
+                <label for="contactPhone">Phone:</label>
+                <input type="text" placeholder="phone" id="contactPhone" formControlName="contactPhone" readonly>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="contactPosition">Position:</label>
+                <input type="text" placeholder="position" id="contactPosition" formControlName="contactPosition"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="contactOrganisation">Organisation:</label>
+                <input type="text" placeholder="organisation" id="contactOrganisation"
+                    formControlName="contactOrganisation" readonly>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+            <label for="contactNote">Note:</label>
+            <textarea placeholder="contact note" id="contactNote" formControlName="contactNote" readonly></textarea>
+        </div>
+        </div>
+        <div class="form-row-more-items-center">
+            <div>
+                <label for="contactCreated">Created:</label>
+                <input class="created" type="text" placeholder="created" id="contactCreated" formControlName="contactCreated" readonly>
+            </div>
+            <div>
+                <label for="contactUpdated">Updated:</label>
+                <input class="created" type="text" placeholder="updated" id="contactUpdated" formControlName="contactUpdated" readonly>
+            </div>
+        </div>
+
+        <div class="form-row-more-items-center">
+            <button class="private-cancel" type="button" (click)="backToList()">Cancel</button>
+            <button class="route-to-update" type="button" (click)="backToUpdateContact()">Go to update</button>
+            <button class="delete-ok" type="submit" [disabled]="!form.valid">Delete</button>
+        </div>
+    </form>
+</div>

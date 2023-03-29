@@ -1,0 +1,65 @@
+<div class="cards">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front flip-card-front-task pom">
+                <h1>Tasks</h1>
+                <p>The list of operative tasks</p>
+                <p>We love that items</p>
+            </div>
+            <div class="flip-card-back flip-card-back-task">
+                <h1>Tasks</h1>
+                <p class="key">Number of items:</p>
+                <p class="val">{{taskCount | number: '3.0-0'}}</p>
+                <a mat-stroked-button [routerLink]="'/prv/tsk'">ENTER</a>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card">
+        <!-- contact card -->
+        <div class="flip-card-inner">
+            <div class="flip-card-front flip-card-front-contact">
+                <h1>Contacts</h1>
+                <p>The list of your contacts</p>
+                <p>We love that items</p>
+            </div>
+            <div class="flip-card-back flip-card-back-contact">
+                <h1>Contacts</h1>
+                <p class="key">Number of items:</p>
+                <p class="val">{{contactCount | number: '3.0-0'}}</p>
+                <a mat-stroked-button [routerLink]="'/prv/cnt'">ENTER</a>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card">
+        <!-- Note card -->
+        <div class="flip-card-inner">
+            <div class="flip-card-front flip-card-front-note">
+                <h1>Notes</h1>
+                <p>Your notes on one place</p>
+                <p>We love that items</p>
+            </div>
+            <div class="flip-card-back flip-card-back-note">
+                <h1>Notes</h1>
+                <p class="key">Number of items:</p>
+                <p class="val">{{noteCount | number: '3.0-0'}}</p>
+                <a mat-stroked-button [routerLink]="'/prv/not'">ENTER</a>
+            </div>
+        </div>
+    </div>
+    <div class="flip-card">
+        <!-- Event card -->
+        <div class="flip-card-inner">
+            <div class="flip-card-front flip-card-front-event">
+                <h1>Activities</h1>
+                <p>Your important activities</p>
+                <p>We love that items</p>
+            </div>
+            <div class="flip-card-back flip-card-back-event">
+                <h1>Activities</h1>
+                <p class="key">Number of items:</p>
+                <p class="val">{{activityCount | number: '3.0-0'}}</p>
+                <a mat-stroked-button [routerLink]="'/prv/act'">ENTER</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="private-list-wrapper"> 
+    <h2 class="list-form-title">Note List</h2>
+
+    <!-- form filter -->
+    <form class="list-filter">
+        <div class="filter">
+            <input class="filter" type="text" placeholder="filter..." (keyup)="applyFilter($event)" #input>
+            <button class="route-to-insert" [routerLink]="'/prv/not/ins'">Insert a new note</button>
+        </div>
+    </form>
+    <!--  -->
+
+    <!-- table definition -->
+    <table cdk-table [dataSource]="dataSource" matSort>
+
+        <!-- Title Column; Footer definition -->
+        <ng-container cdkColumnDef="title">
+            <th cdk-header-cell *cdkHeaderCellDef mat-sort-header> Title </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.title}} </td>
+            <th cdk-footer-cell *cdkFooterCellDef></th>
+        </ng-container>
+
+
+        <!-- Status Column -->
+        <ng-container cdkColumnDef="status">
+            <th width="12%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Status </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+
+        <!-- Priority Column -->
+        <ng-container cdkColumnDef="priority">
+            <th width="12%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Priority </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.priority}} </td>
+        </ng-container>
+
+
+        <!-- Category Column -->
+        <ng-container cdkColumnDef="category">
+            <th width="12%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Category </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.category}} </td>
+        </ng-container>
+
+
+        <!-- Operations Column -->
+        <ng-container cdkColumnDef="operations">
+            <th width="7%" cdk-header-cell *cdkHeaderCellDef> operations </th>
+            <td cdk-cell *cdkCellDef="let element">
+                <a [routerLink]="['/prv/not/shw/', element.id]"><i class="material-icons" style="color: green;">list</i></a>
+                <a [routerLink]="['/prv/not/upd/', element.id]"><i class="material-icons" style="color: blue;">edit</i></a>
+                <a [routerLink]="['/prv/not/del/', element.id]"><i class="material-icons" style="color: red;">delete</i></a>
+            </td>
+        </ng-container>
+
+        <!-- footer content -->
+        <ng-container cdkColumnDef="disclaimer">
+            <td cdk-footer-cell *cdkFooterCellDef colspan="5">Total count of rows in this table: {{this.notesCount}}</td>
+        </ng-container>
+
+        <!-- header, data, fotter templates -->
+        <tr cdk-header-row *cdkHeaderRowDef="columnList"></tr>
+        <tr cdk-row *cdkRowDef="let row; columns: columnList;"></tr>
+        <tr cdk-footer-row *cdkFooterRowDef="['disclaimer']"></tr>
+    </table>
+
+    <!-- paginator -->
+    <div class="paginator">
+        <select>
+            <option value="5">05 rows per page</option>
+            <option value="15">15 rows per page</option>
+            <option value="25">25 rows per page</option>
+            <option value="all">No paging</option>
+        </select>
+        <a href=""><span class="material-symbols-outlined">first_page</span></a>
+        <a href=""><span class="material-symbols-outlined">chevron_left</span></a>
+        <a href=""><span class="material-symbols-outlined">chevron_right</span></a>
+        <a href=""><span class="material-symbols-outlined">last_page</span></a>
+    </div>
+</div>

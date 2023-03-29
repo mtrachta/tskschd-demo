@@ -1,0 +1,45 @@
+<div class="private-form-wrapper">
+    <!-- <div class="sign-card"> -->
+    <h2 class="detail-form-title">Note Update Form</h2>
+    <form class="item-update" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row-one-item-start">
+            <div class="noteTitle">
+                <label for="noteTitle">Note title: *</label>
+                <input class="note-create" type="text" placeholder="note title" id="noteTitle"
+                    formControlName="noteTitle" required>
+                <div *ngIf="f.noteTitle.invalid && (f.noteTitle.dirty || f.noteTitle.touched)" class="note-input-error">
+                    note title cannot be empty
+                </div>
+            </div>
+        </div>
+        <div class="form-row-one-item-start">
+            <div>
+                <label for="noteBody">Note body:</label>
+                <textarea placeholder="note body" id="noteBody"
+                    formControlName="noteBody"></textarea>
+            </div>
+        </div>
+        <div class="form-row-more-items-center"> 
+            <div>
+                <label for="noteStatus">Status: *</label>
+                <select id="noteStatus" formControlName="noteStatus">
+                    <option *ngFor="let item of noteStatusEnum" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="notePriority">Priority: *</label>
+                <select id="notePriority" formControlName="notePriority">
+                    <option *ngFor="let item of notePriorityEnum" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="noteCategory">Category:</label>
+                <input type="text" placeholder="note category" id="noteCategory" formControlName="noteCategory">
+            </div>
+        </div>
+        <div class="form-row-button">
+            <button class="update-ok" type="submit" [disabled]="!form.valid">Update</button>
+            <button class="private-cancel" type="button" (click)="backToList()">Cancel</button>
+        </div>
+    </form>
+</div>

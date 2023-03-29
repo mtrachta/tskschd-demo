@@ -1,0 +1,86 @@
+<div class="private-list-wrapper">
+    <h2 class="list-form-title">Activity List</h2>
+
+    <!-- form filter -->
+    <form class="list-filter">
+        <div class="filter">
+            <input class="filter" type="text" placeholder="filter..." (keyup)="applyFilter($event)" #input>
+            <button class="route-to-insert" [routerLink]="'/prv/act/ins'">Insert a new activity</button>
+        </div>
+    </form>
+    <!--  -->
+
+    <!-- table definition -->
+    <table cdk-table [dataSource]="dataSource" matSort>
+
+        <!-- Title Column; Footer definition -->
+        <ng-container cdkColumnDef="title">
+            <th cdk-header-cell *cdkHeaderCellDef mat-sort-header> Title </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.title}} </td>
+            <th cdk-footer-cell *cdkFooterCellDef></th>
+        </ng-container>
+
+
+        <!-- Status Column -->
+        <ng-container cdkColumnDef="status">
+            <th width="10%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Status </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+
+        <!-- Priority Column -->
+        <ng-container cdkColumnDef="priority">
+            <th width="10%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Priority </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.priority}} </td>
+        </ng-container>
+
+
+        <!-- Category Column -->
+        <ng-container cdkColumnDef="category">
+            <th width="12%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Category </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.category}} </td>
+        </ng-container>
+
+
+        <!-- StartDate Column -->
+        <ng-container cdkColumnDef="startDate">
+            <th width="7%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Date </th>
+            <!-- <td cdk-cell *cdkCellDef="let element"> {{element.startdate | date: 'dd.MM.YYY'}} </td> -->
+            <td cdk-cell *cdkCellDef="let element"> {{element.startDate | date: 'dd.MM.YYY'}} </td>
+        </ng-container>
+
+
+        <!-- StartTime Column -->
+        <ng-container cdkColumnDef="lengthTotal">
+            <th width="7%" cdk-header-cell *cdkHeaderCellDef mat-sort-header> Length </th>
+            <td cdk-cell *cdkCellDef="let element"> {{element.lengthTotal}} </td>
+        </ng-container>
+
+
+        <!-- Operations Column -->
+        <ng-container cdkColumnDef="operations">
+            <th width="7%" cdk-header-cell *cdkHeaderCellDef> operations </th>
+            <td cdk-cell *cdkCellDef="let element">
+                <a [routerLink]="['/prv/act/shw/', element.id]"><i class="material-icons" style="color: green;">list</i></a>
+                <a [routerLink]="['/prv/act/upd/', element.id]"><i class="material-icons" style="color: blue;">edit</i></a>
+                <a [routerLink]="['/prv/act/del/', element.id]"><i class="material-icons" style="color: red;">delete</i></a>
+            </td>
+        </ng-container>
+
+        <!-- footer content -->
+        <ng-container cdkColumnDef="disclaimer">
+            <td cdk-footer-cell *cdkFooterCellDef colspan="7">Total count of rows in this table: {{this.tasksCount}}</td>
+        </ng-container>
+
+        <!-- header, data, fotter templates -->
+        <tr cdk-header-row *cdkHeaderRowDef="columnList"></tr>
+        <tr cdk-row *cdkRowDef="let row; columns: columnList;"></tr>
+        <tr cdk-footer-row *cdkFooterRowDef="['disclaimer']"></tr>
+    </table>
+    <div class="paginator">
+        <a href=""><i class="material-icons" style="color: green;">first_page</i></a>
+        <a href=""><i class="material-icons" style="color: green;">chevron_left</i></a>
+        <a href=""><i class="material-icons" style="color: green;">chevron_right</i></a>
+        <a href=""><i class="material-icons" style="color: green;">last_page</i></a>
+    </div>
+</div>
